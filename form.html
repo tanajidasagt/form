@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+</head>
+<body>
+
+<script>
+  function data() {
+    var a = document.getElementById("n1").value;
+    var b = document.getElementById("n2").value;
+    var c = document.getElementById("n3").value;
+    var d = document.getElementById("n4").value;
+    var e = document.getElementById("n5").value;
+
+    if (a === "" || b === "" || c === "" || d === "" || e === "") {
+      alert("All fields are mandatory");
+      return false;
+    }
+
+    if (c !== d) {
+      alert("Passwords do not match");
+      return false;
+    }
+
+    if (b.length !== 10) {
+      alert("Phone number must be of 10 digits");
+      return false;
+    }
+
+    if (isNaN(b)) {
+      alert("Please enter a valid number");
+      return false;
+    }
+
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(e)) {
+      alert("Please enter a valid email address");
+      return false;
+    }
+
+    // All validations passed
+    return true;
+  }
+</script>
+
+<style>
+    h1 {
+      text-align: center;
+    }
+    table {
+      border-collapse: collapse;
+      width: 50%;
+      margin: 0 auto;
+    }
+    td {
+      padding: 10px;
+      border: 1px solid #000;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      background-color: yellow;
+      width: 90%;
+      padding: 8px;
+      box-sizing: border-box;
+      border: 1px solid red;
+      border-radius: 4px;
+    }
+    button, input[type="submit"] {
+      background-color: Dodgerblue;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover, input[type="submit"]:hover {
+      background-color: RoyalBlue;
+    }
+    .message {
+      font-size: 20px;
+      margin-top: 10px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Registration Form</h1>
+
+<script>
+  function data() {
+    var a = document.getElementById("n1").value;
+    var b = document.getElementById("n2").value;
+    var c = document.getElementById("n3").value;
+    var d = document.getElementById("n4").value;
+    var e = document.getElementById("n5").value;
+
+    if (a === "" || b === "" || c === "" || d === "" || e === "") {
+      alert("All fields are mandatory");
+      return false;
+    }
+
+    if (c !== d) {
+      alert("Passwords do not match");
+      return false;
+    }
+
+    if (b.length !== 10 || isNaN(b)) {
+      alert("Phone number must be exactly 10 digits and numeric");
+      return false;
+    }
+
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(e)) {
+      alert("Please enter a valid email address");
+      return false;
+    }
+
+    // All validations passed
+    return true;
+  }
+</script>
+
+<form onsubmit="return data()" action="abc.html">
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td><input type="text" id="n1"></td>
+    </tr>
+    <tr>
+      <td>Contact:</td>
+      <td><input type="text" id="n2"></td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td><input type="email" id="n5"></td>
+    </tr>
+    <tr>
+      <td>Password:</td>
+      <td><input type="password" id="n3"></td>
+    </tr>
+    <tr>
+      <td>Confirm Password:</td>
+      <td><input type="password" id="n4"></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center;">
+        <input type="submit" value="Submit Your Data">
+      </td>
+    </tr>
+  </table>
+</form>
+
+</body>
+</html>
